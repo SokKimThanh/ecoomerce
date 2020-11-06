@@ -1,48 +1,19 @@
-<!-- <owl-carousel-o [options]="customOptions">
-
-    <ng-container *ngFor="let slide of mySlideImages">
-        <ng-template class="slide" carouselSlide [id]="slide.id">
-            <img [src]="slide.url" [alt]="slide.id" [title]="slide.id">
-        </ng-template>
-    </ng-container>
-
-</owl-carousel-o> -->
-
-<div class="content">
-    <div class="media all people">
-        <a href="assets/images/fulls/01.jpg"><img src="assets/images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
+<div class="owl-carousel-holder">
+    <div class="slider-image-section">
+        <h2>Banner Slider Using Owl Casrousel</h2>
+        <owl-carousel [options]="customOptions" [items]="slidesStore" [carouselClasses]="['owl-theme', 'sliding']">
+            <div *ngFor="let photo of slidesStore">
+                <a [href]="photo.url"><img [src]="photo.thumbnailUrl" alt="" [title]="photo.title" /></a>
+            </div>
+        </owl-carousel>
     </div>
-    <div class="media all place">
-        <a href="assets/images/fulls/05.jpg"><img src="assets/images/thumbs/05.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all thing">
-        <a href="assets/images/fulls/09.jpg"><img src="assets/images/thumbs/09.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all people">
-        <a href="assets/images/fulls/02.jpg"><img src="assets/images/thumbs/02.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all place">
-        <a href="assets/images/fulls/06.jpg"><img src="assets/images/thumbs/06.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all thing">
-        <a href="assets/images/fulls/10.jpg"><img src="assets/images/thumbs/10.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all people">
-        <a href="assets/images/fulls/03.jpg"><img src="assets/images/thumbs/03.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all place">
-        <a href="assets/images/fulls/07.jpg"><img src="assets/images/thumbs/07.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all thing">
-        <a href="assets/images/fulls/11.jpg"><img src="assets/images/thumbs/11.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all people">
-        <a href="assets/images/fulls/04.jpg"><img src="assets/images/thumbs/04.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all place">
-        <a href="assets/images/fulls/08.jpg"><img src="assets/images/thumbs/08.jpg" alt="" title="This right here is a caption." /></a>
-    </div>
-    <div class="media all thing">
-        <a href="assets/images/fulls/12.jpg"><img src="assets/images/thumbs/12.jpg" alt="" title="This right here is a caption." /></a>
+    <hr/>
+    <div class="carousel-section">
+        <h2>Image Carousel Using Owl Casrousel</h2>
+        <owl-carousel [options]="customOptions" [items]="slidesStore">
+            <div *ngFor="let photo of slidesStore">
+                <a [href]="photo.url"><img [src]="photo.thumbnailUrl" alt="" [title]="photo.title" /></a>
+            </div>
+        </owl-carousel>
     </div>
 </div>

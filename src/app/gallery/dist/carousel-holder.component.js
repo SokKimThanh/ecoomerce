@@ -35,6 +35,7 @@ var CarouselHolderComponent = /** @class */ (function () {
             },
             nav: true
         };
+        this.carouselSlide = [];
     }
     CarouselHolderComponent.prototype.ngOnInit = function () {
         this.showGalleries();

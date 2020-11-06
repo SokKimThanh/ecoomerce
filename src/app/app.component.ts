@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
       this.tab = 2;
     } else if (tab === 3) {
       this.tab = 3;
+    } else if (tab === 4) {
+      this.tab = 4;
     }
   }
   ngOnInit(): void {

@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import { GalleryDetailComponent } from './gallery-detail.component';
 import { GalleryComponent } from './gallery.component';
 import { BrowserModule } from '@angular/platform-browser';
+
 @NgModule({
   declarations: [
     GalleryComponent,
-    GalleryDetailComponent
+    GalleryDetailComponent,
   ],
   imports: [
     CommonModule,

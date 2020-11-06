@@ -29,10 +29,17 @@
     $('.gallery').each(function () {
       var $gallery = $(this),
           $content = $gallery.find('.content'); // Poptrox.
-
-      $content.poptrox({
-        usePopupCaption: true
-      }); // Tabs.
+      // $content.poptrox({
+      //     usePopupCaption: true,
+      //     usePopupNav: true,
+      //     popupPadding: 0
+      // });
+      // $('.content').poptrox({
+      //     usePopupCaption: true,
+      //     usePopupNav: true,
+      //     popupPadding: 0
+      // });
+      // Tabs.
 
       $gallery.each(function () {
         var $this = $(this),

@@ -20,7 +20,7 @@ var GalleryModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 gallery_component_1.GalleryComponent,
-                gallery_detail_component_1.GalleryDetailComponent
+                gallery_detail_component_1.GalleryDetailComponent,
             ],
             imports: [
                 common_1.CommonModule,

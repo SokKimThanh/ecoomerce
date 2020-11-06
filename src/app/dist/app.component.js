@@ -21,6 +21,9 @@ var AppComponent = /** @class */ (function () {
         else if (tab === 3) {
             this.tab = 3;
         }
+        else if (tab === 4) {
+            this.tab = 4;
+        }
     };
     AppComponent.prototype.ngOnInit = function () {
         this.tab = 1;

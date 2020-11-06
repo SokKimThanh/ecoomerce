@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { IGallery } from 'src/app/gallery/gallery';
+import { IGallery } from '../gallery/gallery';
+import { GalleryService } from '../gallery/gallery.service';
 
 @Component({
   selector: 'app-carousel-holder',
@@ -8,11 +9,8 @@ import { IGallery } from 'src/app/gallery/gallery';
   styleUrls: ['./carousel-holder.component.css']
 })
 export class CarouselHolderComponent implements OnInit {
-  mySlideImages: IGallery[] = [
-    { id: 1, url: 'assets/images/image1.jpg' },
-    { id: 2, url: 'assets/images/image2.jpeg}' },
-    { id: 3, url: 'assets/images/image3.jpg' }
-  ];
+  slidesStore: IGallery[];
+  errorMessage: string;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -20,7 +18,7 @@ export class CarouselHolderComponent implements OnInit {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    navText: ['<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right></i>"'],
+    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
     responsive: {
       0: {
         items: 1
@@ -37,7 +35,20 @@ export class CarouselHolderComponent implements OnInit {
     },
     nav: true
   };
-  constructor() { }
+  constructor(private galleryService: GalleryService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.showGalleries();
+  }
+  showGalleries(): void {
+    this.galleryService.getGalleries()
+      // clone the data object, using its known IPhoto shape
+      .subscribe({
+        next: slidesStore => {
+          this.slidesStore = slidesStore;
+        },
+        error: err => this.errorMessage = err
+      });
+  }
 }
