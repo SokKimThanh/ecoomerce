@@ -2,9 +2,9 @@
     <!-- Nav -->
     <nav id="nav">
         <ul>
-            <li><a [routerLink]="['/index']" class="active"><span class="icon fa-home"></span></a></li>
-            <li><a [routerLink]="['/gallery']"><span class="icon fa-camera-retro"></span></a></li>
-            <li><a [routerLink]="['/generic']"><span class="icon fa-file-text-o"></span></a></li>
+            <li><a [routerLink]="['/index']" (click)="activeLink(1)" [ngClass]="{'active' : tab === 1}"><span class="icon fa-home"></span></a></li>
+            <li><a [routerLink]="['/gallery']" (click)="activeLink(2)" [ngClass]="{'active' : tab === 2}"><span class="icon fa-camera-retro"></span></a></li>
+            <li><a [routerLink]="['/generic']" (click)="activeLink(3)" [ngClass]="{'active' : tab === 3}"><span class="icon fa-file-text-o"></span></a></li>
         </ul>
     </nav>
     <!-- Main -->
