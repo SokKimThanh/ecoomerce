@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { PhotosApi } from 'src/api/photos-api';
+import { IGallery } from 'src/app/gallery/gallery';
 
 @Component({
   selector: 'app-carousel-holder',
@@ -8,7 +8,7 @@ import { PhotosApi } from 'src/api/photos-api';
   styleUrls: ['./carousel-holder.component.css']
 })
 export class CarouselHolderComponent implements OnInit {
-  mySlideImages: PhotosApi[] = [
+  mySlideImages: IGallery[] = [
     { id: 1, url: 'assets/images/image1.jpg' },
     { id: 2, url: 'assets/images/image2.jpeg}' },
     { id: 3, url: 'assets/images/image3.jpg' }

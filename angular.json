@@ -21,15 +21,16 @@
                         "aot": true,
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/api"
                         ],
                         "styles": [
                             "src/styles.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "src/assets/js/jquery.poptrox.min.js",
-                            "src/assets/js/jquery.scrolly.min.js",
+                            "src/assets/js/jquery.scrollex.min.js",
+                            "src/assets/js/jquery.scrolly.js",
                             "src/assets/js/skel.min.js",
                             "src/assets/js/util.js",
                             "src/assets/js/main.js"

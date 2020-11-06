@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IGallery } from 'src/app/gallery/gallery';
+import { GalleryService } from './gallery.service';
 
 @Component({
   selector: 'app-gallery',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
-  constructor() { }
+  photos: IGallery[];
+  errorMessage: string;
+  constructor(private galleryService: GalleryService) { }
 
   ngOnInit(): void {
+    this.showGalleries();
   }
 
+  showGalleries(): void {
+    this.galleryService.getGalleries()
+      // clone the data object, using its known IPhoto shape
+      .subscribe({
+        next: photos => {
+          this.photos = photos;
+        },
+        error: err => this.errorMessage = err
+      });
+  }
 }

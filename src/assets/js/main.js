@@ -1,18 +1,14 @@
-/*
-	Snapshot by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+// IIFE - Immediately Invoked Function Expression
+(function(yourcode) {
 
-(function($) {
-    skel.breakpoints({
-        xlarge: '(max-width: 1680px)',
-        large: '(max-width: 1280px)',
-        medium: '(max-width: 980px)',
-        small: '(max-width: 736px)',
-        xsmall: '(max-width: 480px)'
-    });
+    // The global jQuery object is passed as a parameter
+    yourcode(window.jQuery, window, document);
 
+}(function($, window, document) {
+
+    // The $ is now locally scoped 
+
+    // Listen for the jQuery ready event on the document
     $(function() {
 
         var $window = $(window),
@@ -99,5 +95,7 @@
         });
 
     });
+    // The rest of the code goes here!
 
-})(jQuery);
+
+}));

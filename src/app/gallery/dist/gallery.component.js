@@ -9,9 +9,22 @@ exports.__esModule = true;
 exports.GalleryComponent = void 0;
 var core_1 = require("@angular/core");
 var GalleryComponent = /** @class */ (function () {
-    function GalleryComponent() {
+    function GalleryComponent(galleryService) {
+        this.galleryService = galleryService;
     }
     GalleryComponent.prototype.ngOnInit = function () {
+        this.showGalleries();
+    };
+    GalleryComponent.prototype.showGalleries = function () {
+        var _this = this;
+        this.galleryService.getGalleries()
+            // clone the data object, using its known IPhoto shape
+            .subscribe({
+            next: function (photos) {
+                _this.photos = photos;
+            },
+            error: function (err) { return _this.errorMessage = err; }
+        });
     };
     GalleryComponent = __decorate([
         core_1.Component({

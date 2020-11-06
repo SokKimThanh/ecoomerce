@@ -12,18 +12,23 @@ var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
 var gallery_detail_component_1 = require("./gallery-detail.component");
 var gallery_component_1 = require("./gallery.component");
+var platform_browser_1 = require("@angular/platform-browser");
 var GalleryModule = /** @class */ (function () {
     function GalleryModule() {
     }
     GalleryModule = __decorate([
         core_1.NgModule({
-            declarations: [],
+            declarations: [
+                gallery_component_1.GalleryComponent,
+                gallery_detail_component_1.GalleryDetailComponent
+            ],
             imports: [
                 common_1.CommonModule,
+                platform_browser_1.BrowserModule,
                 router_1.RouterModule.forChild([
                     { path: 'gallery', component: gallery_component_1.GalleryComponent },
                     { path: 'gallery/:id', component: gallery_detail_component_1.GalleryDetailComponent }
-                ]),
+                ])
             ]
         })
     ], GalleryModule);
