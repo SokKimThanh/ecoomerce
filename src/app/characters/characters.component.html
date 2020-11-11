@@ -1,46 +1,23 @@
-<!-- Banner -->
-<section id="banner">
-    <div class="inner">
-        <h1>Hey, I'm Snapshot</h1>
-        <p>A fully responsive gallery template by <a href="https://templated.co">TEMPLATED</a></p>
-        <ul class="actions">
-            <li><a href="#galleries" class="button alt scrolly big">Continue</a></li>
-        </ul>
-    </div>
-</section>
-
 <!-- Gallery -->
 <section id="galleries">
     <!-- Photo Galleries -->
     <div class="gallery">
         <header class="special">
-            <h2>What's New</h2>
+            <h2>{{pageTitle}}</h2>
         </header>
-        <div class="content">
-            <div class="media">
-                <a href="assets/images/fulls/01.jpg"><img src="assets/images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/05.jpg"><img src="assets/images/thumbs/05.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/09.jpg"><img src="assets/images/thumbs/09.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/02.jpg"><img src="assets/images/thumbs/02.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/06.jpg"><img src="assets/images/thumbs/06.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/10.jpg"><img src="assets/images/thumbs/10.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/03.jpg"><img src="assets/images/thumbs/03.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
-            <div class="media">
-                <a href="assets/images/fulls/07.jpg"><img src="assets/images/thumbs/07.jpg" alt="" title="This right here is a caption." /></a>
-            </div>
+        <div class="">
+            <h1>Storyline Tracker</h1>
+            <h3>Component Demo</h3>
+            <section>
+                <article>
+                    <ul class="characters">
+                        <li *ngFor="let character of characters">
+                            <div (click)='selected(character)' [class.selected]="character === selectedCharacter">{{character.id}}. {{character.name}}</div>
+                        </li>
+                    </ul>
+                    <app-story-character [character]="selectedCharacter" (notify)='onRatingClicked($event)'></app-story-character>
+                </article>
+            </section>
         </div>
         <footer>
             <a href="gallery.html" class="button big">Full Gallery</a>

@@ -11,6 +11,7 @@ export interface Link {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  title: string;
   links: Link[];
   tab: number;
   activeLink(tab): void {
@@ -22,10 +23,13 @@ export class AppComponent implements OnInit {
       this.tab = 3;
     } else if (tab === 4) {
       this.tab = 4;
+    } else if (tab === 5) {
+      this.tab = 5;
     }
   }
   ngOnInit(): void {
     this.tab = 1;
+    this.title = 'angular ecoommerce';
   }
 }
 

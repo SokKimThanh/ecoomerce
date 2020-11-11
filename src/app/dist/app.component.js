@@ -24,9 +24,13 @@ var AppComponent = /** @class */ (function () {
         else if (tab === 4) {
             this.tab = 4;
         }
+        else if (tab === 5) {
+            this.tab = 5;
+        }
     };
     AppComponent.prototype.ngOnInit = function () {
         this.tab = 1;
+        this.title = 'angular ecoommerce';
     };
     AppComponent = __decorate([
         core_1.Component({

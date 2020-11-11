@@ -20,6 +20,8 @@ var gallery_module_1 = require("./gallery/gallery.module");
 var common_1 = require("@angular/common");
 var carousel_holder_component_1 = require("./carousel-holder/carousel-holder.component");
 var ngx_owl_carousel_1 = require("ngx-owl-carousel");
+var characters_component_1 = require("./characters/characters.component");
+var character_component_1 = require("./characters/character.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -29,7 +31,9 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 generic_component_1.GenericComponent,
                 welcome_component_1.WelcomeComponent,
-                carousel_holder_component_1.CarouselHolderComponent
+                carousel_holder_component_1.CarouselHolderComponent,
+                characters_component_1.CharactersComponent,
+                character_component_1.CharacterComponent
             ],
             imports: [
                 common_1.CommonModule,
@@ -42,6 +46,7 @@ var AppModule = /** @class */ (function () {
                     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                     { path: 'generic', component: generic_component_1.GenericComponent },
                     { path: 'carousel', component: carousel_holder_component_1.CarouselHolderComponent },
+                    { path: 'character', component: characters_component_1.CharactersComponent },
                     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                     { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
                 ]),

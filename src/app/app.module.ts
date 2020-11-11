@@ -13,12 +13,16 @@ import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselHolderComponent } from './carousel-holder/carousel-holder.component';
 import { OwlModule } from 'ngx-owl-carousel';
+import { CharactersComponent } from './characters/characters.component';
+import { CharacterComponent } from './characters/character.component';
 @NgModule({
   declarations: [
     AppComponent,
     GenericComponent,
     WelcomeComponent,
-    CarouselHolderComponent
+    CarouselHolderComponent,
+    CharactersComponent,
+    CharacterComponent
   ],
   imports: [
     CommonModule,
@@ -32,6 +36,7 @@ import { OwlModule } from 'ngx-owl-carousel';
       { path: 'welcome', component: WelcomeComponent },
       { path: 'generic', component: GenericComponent },
       { path: 'carousel', component: CarouselHolderComponent },
+      { path: 'character', component: CharactersComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
